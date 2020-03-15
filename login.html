@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login</title>
+	<script type="text/javascript">
+		function validate(){
+
+			var user = document.getElementById('user').value;
+			var pass = document.getElementById('pass').value;
+
+
+			if (user == "") 
+			{
+				document.getElementById('userId').innerHTML = "Please fill the userID";
+				return false;
+			}
+
+			if (pass == "") 
+			{
+				document.getElementById('passwords').innerHTML = "Please fill the Password";
+				return false;
+			}
+			
+			if ((pass.length < 8) || (pass.length > 20)) {
+				document.getElementById('passwords').innerHTML = "Password length must be between 8 and 20 digits";
+				return false;
+			}
+
+		}
+	</script>
+</head>
+
+<body>
+	<form onsubmit= " return validate()" action="otp.html">
+
+		<h1> LOGIN </h1>
+		
+		<div id= "a"></div>
+		<label>UserId : </label>
+		<input type="text" placeholder="Enter UserId" id="user" autocomplete="off"></br></br>
+		<span id="userId"></span>
+		</div></br></br>
+
+		<div id="b"></div>	
+		<label>Password : </label>
+		<input type="password" placeholder="Enter Password" id="pass" autocomplete="off"></br></br>
+		<span id="passwords"></span></br></br>
+
+		<p>Don't have an account? <a href="#" >Register</a></p>
+
+		<button type ="submit"autocomplete="off" onclick="validate()">LOGIN</br></br>
+		</br></br></button>
+	</form>
+</body>
+</html>
